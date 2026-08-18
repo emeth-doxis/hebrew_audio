@@ -157,24 +157,57 @@
             .pron-col {
                 font-size: 16px; /* IPA-Schriftgröße für Touch-Knöpfe optimieren */
             }
-            /* Die Wortliste auf Seite 4 für Daumen-Tipps optimieren */
+            /* Die Wortliste auf Seite 4 für Handys optimiert */
             .word-grid {
-                font-size: 24px;
-                row-gap: 12px;
-                column-gap: 8px;
-            }
-            .legend-item {
-                font-size: 18px;
+                font-size: 32px !important; /* Auf Handys groß genug, aber bricht sauber um */
+                row-gap: 15px;
+                column-gap: 10px;
             }
         }
 
         /* Die perfekte, mathematische Ausrichtung an der Schriftlinie */
         .legend-item {
             display: flex !important;
-            align-items: baseline !important; /* Richtet Kreis und Text an der echten Schreiblinie aus */
+            align-items: baseline !important; 
             font-size: 32px !important; 
             margin-bottom: 12px;
             direction: rtl;
+        }
+
+        /* HIER FRISCH EINGEFÜGT: Das Design für die riesigen Wörter ohne Rahmen */
+        .word-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            row-gap: 20px;
+            column-gap: 15px;
+            direction: rtl;
+            font-size: 42px; /* Wunderschöne Riesengröße am PC */
+            margin-top: 40px;
+            line-height: 1.8;
+            font-family: "SBL Hebrew", "Times New Roman", serif;
+        }
+        .word-item {
+            cursor: pointer;
+            user-select: none;
+            display: inline-block;
+            transition: transform 0.1s ease;
+        }
+        .word-item:hover {
+            transform: scale(1.08); /* Wird beim Drüberfahren dezent größer */
+        }
+        
+        /* Die echten Textfarben exakt aus deiner PDF-Vorlage */
+        .w-tib { color: #2e75b6 !important; } /* Prächtiges Tiberianisch-Blau */
+        .w-mod { color: #548235 !important; } /* Klares Modern-Grün */
+        .w-org { color: #c00000 !important; } /* Das prägnante Buch-Rot/Schwarz */
+
+        .word-sep {
+            color: #000000;
+            font-weight: normal;
+            user-select: none;
+            align-self: center;
+            margin: 0 4px;
         }
 
         /* Das Design für deine Kreise - perfekt austariert */
@@ -753,66 +786,66 @@
     </div>
 
     <div class="word-grid">
-        <span class="word-item" onclick="playWord('adam')">אָדָם</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('yiqra')">יִקְרָא</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('lammah')">לָמָּה</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('berit')">בְּרִית</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('cheder')">חֶדֶר</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('meod')">מְאֹד</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('laylah')">לַיְלָה</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('od')">עוֹד</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('panim')">פָּנִים</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('tsachaq')">צָחַק</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('gadol')">גָּדוֹל</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('haish')">הָאִישׁ</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('veattah')">וְאַתָּה</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('zot')">זֹאת</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('lintot')">לִנְטוֹת</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('yeled')">יֶלֶד</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('kol')">כֹּל</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('sal')">סַל</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('asinu')">עָשִׂינוּ</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('divrehem')">דִּבְרֵיהֶם</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('degel')">דֶּגֶל</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('ach')">אַךְ</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('afu')">אָפוּ</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('haarets')">הָאָרֶץ</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('kaf')">כַּף</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('ken')">כֵּן</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('schachachti')">שָׁכַחְתִּי</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('oniyah')">אֱנִיָּה</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('elohim')">אֱלֹהִים</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('ani')">אֲנִי</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('kutonet')">כֻּתֹּנֶת</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('yehudah')">יְהוּדָה</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('aryeh')">אַרְיֵה</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('kisse')">כִּסֵּא</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('rosh')">רֹאשׁ</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('milchamah')">מִלְחָמָה</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('qodesh')">קֹדֶשׁ</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('al')">עַל</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('min')">מִן</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('perets')">פֶּרֶץ</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('raq')">רַק</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('chag')">חַג</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('lulei')">לוּלֵי</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('tohor')">טָהֳר</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('mazleg')">מַזְלֵג</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('tame')">טָמֵא</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('ani_adj')">עֲנִי</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('eeseh')">אֶעֱשֶׂה</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('keren')">קֶרֶן</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('qol')">קוֹל</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('yaalu')">יַעֲלוּ</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('maasu')">מָאֲסוּ</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('redu')">רְדוּ</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('vayyeshev')">וַיֵּשֶׁב</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('yaar')">יַעַר</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('ketavten')">כְּתַבְתֶּן</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('yom')">יוֹם</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('magen')">מָגֵן</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('tsoaqei')">צֹעֲקֵי</span> <span class="word-sep">|</span>
-        <span class="word-item" onclick="playWord('et')">אֵת</span>
+        <span class="word-item w-org" onclick="playWord('adam')">אָדָם</span> <span class="word-sep">|</span>
+        <span class="word-item w-tib" onclick="playWord('yiqra')">יִקְרָא</span> <span class="word-sep">|</span>
+        <span class="word-item w-org" onclick="playWord('lammah')">לָמָּה</span> <span class="word-sep">|</span>
+        <span class="word-item w-tib" onclick="playWord('berit')">בְּרִית</span> <span class="word-sep">|</span>
+        <span class="word-item w-org" onclick="playWord('cheder')">חֶדֶר</span> <span class="word-sep">|</span>
+        <span class="word-item w-tib" onclick="playWord('meod')">מְאֹד</span> <span class="word-sep">|</span>
+        <span class="word-item w-org" onclick="playWord('laylah')">לַיְלָה</span> <span class="word-sep">|</span>
+        <span class="word-item w-tib" onclick="playWord('od')">עוֹד</span> <span class="word-sep">|</span>
+        <span class="word-item w-org" onclick="playWord('panim')">פָּנִים</span> <span class="word-sep">|</span>
+        <span class="word-item w-mod" onclick="playWord('tsachaq')">צָחַק</span> <span class="word-sep">|</span>
+        <span class="word-item w-org" onclick="playWord('gadol')">גָּדוֹל</span> <span class="word-sep">|</span>
+        <span class="word-item w-tib" onclick="playWord('haish')">הָאִישׁ</span> <span class="word-sep">|</span>
+        <span class="word-item w-org" onclick="playWord('veattah')">וְאַתָּה</span> <span class="word-sep">|</span>
+        <span class="word-item w-tib" onclick="playWord('zot')">זֹאת</span> <span class="word-sep">|</span>
+        <span class="word-item w-org" onclick="playWord('lintot')">לִנְטוֹת</span> <span class="word-sep">|</span>
+        <span class="word-item w-org" onclick="playWord('yeled')">יֶלֶד</span> <span class="word-sep">|</span>
+        <span class="word-item w-tib" onclick="playWord('kol')">כֹּל</span> <span class="word-sep">|</span>
+        <span class="word-item w-org" onclick="playWord('sal')">סַל</span> <span class="word-sep">|</span>
+        <span class="word-item w-tib" onclick="playWord('asinu')">עָשִׂינוּ</span> <span class="word-sep">|</span>
+        <span class="word-item w-tib" onclick="playWord('divrehem')">דִּבְרֵיהֶם</span> <span class="word-sep">|</span>
+        <span class="word-item w-org" onclick="playWord('degel')">דֶּגֶל</span> <span class="word-sep">|</span>
+        <span class="word-item w-tib" onclick="playWord('ach')">אַךְ</span> <span class="word-sep">|</span>
+        <span class="word-item w-org" onclick="playWord('afu')">אָפוּ</span> <span class="word-sep">|</span>
+        <span class="word-item w-org" onclick="playWord('haarets')">הָאָרֶץ</span> <span class="word-sep">|</span>
+        <span class="word-item w-mod" onclick="playWord('kaf')">כַּף</span> <span class="word-sep">|</span>
+        <span class="word-item w-mod" onclick="playWord('ken')">כֵּן</span> <span class="word-sep">|</span>
+        <span class="word-item w-org" onclick="playWord('schachachti')">שָׁכַחְתִּי</span> <span class="word-sep">|</span>
+        <span class="word-item w-tib" onclick="playWord('oniyah')">אֱנִיָּה</span> <span class="word-sep">|</span>
+        <span class="word-item w-tib" onclick="playWord('elohim')">אֱלֹהִים</span> <span class="word-sep">|</span>
+        <span class="word-item w-tib" onclick="playWord('ani')">אֲנִי</span> <span class="word-sep">|</span>
+        <span class="word-item w-org" onclick="playWord('kutonet')">כֻּתֹּנֶת</span> <span class="word-sep">|</span>
+        <span class="word-item w-tib" onclick="playWord('yehudah')">יְהוּדָה</span> <span class="word-sep">|</span>
+        <span class="word-item w-org" onclick="playWord('aryeh')">אַרְיֵה</span> <span class="word-sep">|</span>
+        <span class="word-item w-tib" onclick="playWord('kisse')">כִּסֵּא</span> <span class="word-sep">|</span>
+        <span class="word-item w-tib" onclick="playWord('rosh')">רֹאשׁ</span> <span class="word-sep">|</span>
+        <span class="word-item w-org" onclick="playWord('milchamah')">מִלְחָמָה</span> <span class="word-sep">|</span>
+        <span class="word-item w-org" onclick="playWord('qodesh')">קֹדֶשׁ</span> <span class="word-sep">|</span>
+        <span class="word-item w-tib" onclick="playWord('al')">עַל</span> <span class="word-sep">|</span>
+        <span class="word-item w-tib" onclick="playWord('min')">מִן</span> <span class="word-sep">|</span>
+        <span class="word-item w-org" onclick="playWord('perets')">פֶּרֶץ</span> <span class="word-sep">|</span>
+        <span class="word-item w-mod" onclick="playWord('raq')">רַק</span> <span class="word-sep">|</span>
+        <span class="word-item w-mod" onclick="playWord('chag')">חַג</span> <span class="word-sep">|</span>
+        <span class="word-item w-tib" onclick="playWord('lulei')">לוּלֵי</span> <span class="word-sep">|</span>
+        <span class="word-item w-tib" onclick="playWord('tohor')">טָהֳר</span> <span class="word-sep">|</span>
+        <span class="word-item w-org" onclick="playWord('mazleg')">מַזְלֵג</span> <span class="word-sep">|</span>
+        <span class="word-item w-org" onclick="playWord('tame')">טָמֵא</span> <span class="word-sep">|</span>
+        <span class="word-item w-tib" onclick="playWord('ani_adj')">עֲנִי</span> <span class="word-sep">|</span>
+        <span class="word-item w-org" onclick="playWord('eeseh')">אֶעֱשֶׂה</span> <span class="word-sep">|</span>
+        <span class="word-item w-tib" onclick="playWord('keren')">קֶרֶן</span> <span class="word-sep">|</span>
+        <span class="word-item w-org" onclick="playWord('qol')">קוֹל</span> <span class="word-sep">|</span>
+        <span class="word-item w-tib" onclick="playWord('yaalu')">יַעֲלוּ</span> <span class="word-sep">|</span>
+        <span class="word-item w-org" onclick="playWord('maasu')">מָאֲסוּ</span> <span class="word-sep">|</span>
+        <span class="word-item w-tib" onclick="playWord('redu')">רְדוּ</span> <span class="word-sep">|</span>
+        <span class="word-item w-tib" onclick="playWord('vayyeshev')">וַיֵּשֶׁב</span> <span class="word-sep">|</span>
+        <span class="word-item w-org" onclick="playWord('yaar')">יַעַר</span> <span class="word-sep">|</span>
+        <span class="word-item w-tib" onclick="playWord('ketavten')">כְּתַבְתֶּן</span> <span class="word-sep">|</span>
+        <span class="word-item w-mod" onclick="playWord('yom')">יוֹם</span> <span class="word-sep">|</span>
+        <span class="word-item w-tib" onclick="playWord('magen')">מָגֵן</span> <span class="word-sep">|</span>
+        <span class="word-item w-org" onclick="playWord('tsoaqei')">צֹעֲקֵי</span> <span class="word-sep">|</span>
+        <span class="word-item w-tib" onclick="playWord('et')">אֵת</span>
     </div>
 </div>
 
