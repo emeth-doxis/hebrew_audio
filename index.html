@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aussprache-Einführung - Konsonanten</title>
+    <title>Biblisches Hebräisch - Aussprachetrainer</title>
     <style>
         body { 
             font-family: "SBL Hebrew", "Times New Roman", serif; 
@@ -15,53 +15,78 @@
             align-items: center; 
         }
         .page-container { 
-            max-width: 600px; 
+            max-width: 500px; 
             width: 100%; 
+            margin-bottom: 60px;
+        }
+        h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: normal;
+            border-bottom: 4px solid #000000;
+            padding-bottom: 8px;
         }
         table { 
             width: 100%; 
             border-collapse: collapse; 
             margin-top: 10px; 
         }
-        /* Haupt-Überschriften exakt wie im PDF */
         th { 
-            font-size: 36px; 
+            font-size: 38px; 
             font-weight: normal; 
-            padding-bottom: 15px; 
-            border-bottom: 3px solid #000000; 
+            padding-bottom: 8px; 
+            border-bottom: 4px solid #000000; 
             text-align: center;
         }
         td { 
-            padding: 10px 5px; 
+            padding: 6px 0; 
             text-align: center; 
             vertical-align: middle; 
-            font-size: 24px;
         }
-        /* Die farbigen Boxen für die Buchstaben */
         .box-cyan { 
             background-color: #00ffff !important; 
             border: 1px solid #000000; 
-            width: 60px; 
-            font-weight: bold;
+            width: 65px; 
+            height: 52px;
+            font-size: 34px;
         }
         .box-yellow { 
             background-color: #ffff00 !important; 
             border: 1px solid #000000; 
-            width: 60px; 
-            font-weight: bold;
+            width: 65px; 
+            height: 52px;
+            font-size: 34px;
         }
-        /* Die Spalte mit den hebräischen Namen */
+        .box-red { 
+            background-color: #f8cecc !important; 
+            border: 1px solid #000000; 
+            width: 65px; 
+            height: 52px;
+            font-size: 34px;
+        }
+        .box-white {
+            border: 1px solid #000000; 
+            width: 65px; 
+            height: 52px;
+            font-size: 34px;
+        }
         .name-col { 
-            width: 140px; 
+            width: 150px; 
+            font-size: 28px;
+            text-align: center;
         }
-        /* Die 3 Aussprache-Spalten mit deinen exakten PDF-Farben */
-        .audio-container-col {
+        .audio-container-box {
             display: flex;
             border: 1px solid #000000;
+            width: 210px;
+            height: 52px;
+            margin: 0 auto;
         }
         .pron-col { 
             width: 70px; 
-            height: 45px;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -69,172 +94,665 @@
             user-select: none;
             font-size: 22px;
             border-right: 1px solid #000000;
+            box-sizing: border-box;
         }
         .pron-col:last-child {
             border-right: none;
         }
-        /* Hintergrundfarben der Aussprachen */
-        .tib { background-color: #b4c6e7; } /* Tiberianisch-Blau */
-        .am { background-color: #fce4d6; }  /* Author's Mix-Hautton */
-        .mod { background-color: #e2efda; } /* Modern-Grün */
+        .tib { background-color: #b4c6e7; } 
+        .am { background-color: #fce4d6; }  
+        .mod { background-color: #e2efda; } 
         
         .pron-col:hover { 
-            filter: brightness(0.92); 
+            filter: brightness(0.95); 
+        }
+        .spacer { height: 8px; }
+        .footnote {
+            font-size: 20px;
+            margin-top: 15px;
+            text-align: left;
+            width: 100%;
         }
     </style>
 </head>
 <body>
 
+<!-- ==================== SEITE 1: KONSONANTEN (א bis כ) ==================== -->
 <div class="page-container">
     <table>
         <thead>
             <tr>
                 <th style="width: 70px;">תָּוִים</th>
                 <th class="name-col">שֵׁמוֹת</th>
-                <th style="width: 212px;">קוֹל</th>
+                <th style="width: 220px;">קוֹל</th>
             </tr>
         </thead>
         <tbody>
-            <!-- ALEPH -->
+            <tr class="spacer"></tr>
+            <!-- א -->
             <tr>
                 <td class="box-cyan">א</td>
                 <td class="name-col">אָלֶף</td>
-                <td class="audio-container-col">
-                    <div class="pron-col tib" onclick="playAudio('tib_alef.mp3')">[ʔ]</div>
-                    <div class="pron-col am" onclick="playAudio('am_alef.mp3')">[ʔ]</div>
-                    <div class="pron-col mod" onclick="playAudio('mod_alef.mp3')">[ʔ]</div>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_alef.mp3')">[ʔ]</div>
+                        <div class="pron-col am" onclick="playAudio('am_alef.mp3')">[ʔ]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_alef.mp3')">[ʔ]</div>
+                    </div>
                 </td>
             </tr>
-            <!-- BET 1 (Hard) -->
+            <!-- בּ -->
             <tr>
                 <td class="box-yellow">בּ</td>
                 <td class="name-col">בֵּית</td>
-                <td class="audio-container-col">
-                    <div class="pron-col tib" onclick="playAudio('tib_bet_dagesh.mp3')">[b]</div>
-                    <div class="pron-col am" onclick="playAudio('am_bet_dagesh.mp3')">[b]</div>
-                    <div class="pron-col mod" onclick="playAudio('mod_bet_dagesh.mp3')">[b]</div>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_bet_dagesh.mp3')">[b]</div>
+                        <div class="pron-col am" onclick="playAudio('am_bet_dagesh.mp3')">[b]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_bet_dagesh.mp3')">[b]</div>
+                    </div>
                 </td>
             </tr>
-            <!-- BET 2 (Soft) -->
+            <!-- ב -->
             <tr>
                 <td class="box-yellow">ב</td>
                 <td class="name-col">בֵית</td>
-                <td class="audio-container-col">
-                    <div class="pron-col tib" onclick="playAudio('tib_bet.mp3')">[v]</div>
-                    <div class="pron-col am" onclick="playAudio('am_bet.mp3')">[v]</div>
-                    <div class="pron-col mod" onclick="playAudio('mod_bet.mp3')">[v]</div>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_bet.mp3')">[v]</div>
+                        <div class="pron-col am" onclick="playAudio('am_bet.mp3')">[v]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_bet.mp3')">[v]</div>
+                    </div>
                 </td>
             </tr>
-            <!-- GIMEL 1 (Hard) -->
+            <!-- גּ -->
             <tr>
                 <td class="box-yellow">גּ</td>
-                <td class="name-col">גְּמֶל</td>
-                <td class="audio-container-col">
-                    <div class="pron-col tib" onclick="playAudio('tib_gimel_dagesh.mp3')">[g]</div>
-                    <div class="pron-col am" onclick="playAudio('am_gimel_dagesh.mp3')">[g]</div>
-                    <div class="pron-col mod" onclick="playAudio('mod_gimel_dagesh.mp3')">[g]</div>
+                <td class="name-col">גְּมֶל</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_gimel_dagesh.mp3')">[g]</div>
+                        <div class="pron-col am" onclick="playAudio('am_gimel_dagesh.mp3')">[g]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_gimel_dagesh.mp3')">[g]</div>
+                    </div>
                 </td>
             </tr>
-            <!-- GIMEL 2 (Soft) -->
+            <!-- ג -->
             <tr>
                 <td class="box-yellow">ג</td>
-                <td class="name-col">גְמֶל</td>
-                <td class="audio-container-col">
-                    <div class="pron-col tib" onclick="playAudio('tib_gimel.mp3')">[ɣ]</div>
-                    <div class="pron-col am" onclick="playAudio('am_gimel.mp3')">[g]</div>
-                    <div class="pron-col mod" onclick="playAudio('mod_gimel.mp3')">[g]</div>
+                <td class="name-col">גְมֶל</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_gimel.mp3')">[ɣ]</div>
+                        <div class="pron-col am" onclick="playAudio('am_gimel.mp3')">[g]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_gimel.mp3')">[g]</div>
+                    </div>
                 </td>
             </tr>
-            <!-- DALET 1 (Hard) -->
+            <!-- דּ -->
             <tr>
                 <td class="box-yellow">דּ</td>
                 <td class="name-col">דָּלֶת</td>
-                <td class="audio-container-col">
-                    <div class="pron-col tib" onclick="playAudio('tib_dalet_dagesh.mp3')">[d]</div>
-                    <div class="pron-col am" onclick="playAudio('am_dalet_dagesh.mp3')">[d]</div>
-                    <div class="pron-col mod" onclick="playAudio('mod_dalet_dagesh.mp3')">[d]</div>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_dalet_dagesh.mp3')">[d]</div>
+                        <div class="pron-col am" onclick="playAudio('am_dalet_dagesh.mp3')">[d]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_dalet_dagesh.mp3')">[d]</div>
+                    </div>
                 </td>
             </tr>
-            <!-- DALET 2 (Soft) -->
+            <!-- ד -->
             <tr>
                 <td class="box-yellow">ד</td>
                 <td class="name-col">דָלֶת</td>
-                <td class="audio-container-col">
-                    <div class="pron-col tib" onclick="playAudio('tib_dalet.mp3')">[ð]</div>
-                    <div class="pron-col am" onclick="playAudio('am_dalet.mp3')">[d]</div>
-                    <div class="pron-col mod" onclick="playAudio('mod_dalet.mp3')">[d]</div>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_dalet.mp3')">[ð]</div>
+                        <div class="pron-col am" onclick="playAudio('am_dalet.mp3')">[d]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_dalet.mp3')">[d]</div>
+                    </div>
                 </td>
             </tr>
-            <!-- HE -->
+            <!-- ה -->
             <tr>
                 <td class="box-cyan">ה</td>
                 <td class="name-col">הֵא</td>
-                <td class="audio-container-col">
-                    <div class="pron-col tib" onclick="playAudio('tib_he.mp3')">[h]</div>
-                    <div class="pron-col am" onclick="playAudio('am_he.mp3')">[h]</div>
-                    <div class="pron-col mod" onclick="playAudio('mod_he.mp3')">[h]</div>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_he.mp3')">[h]</div>
+                        <div class="pron-col am" onclick="playAudio('am_he.mp3')">[h]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_he.mp3')">[h]</div>
+                    </div>
                 </td>
             </tr>
-            <!-- WAW -->
+            <!-- ו -->
             <tr>
                 <td class="box-cyan">ו</td>
                 <td class="name-col">וָו</td>
-                <td class="audio-container-col">
-                    <div class="pron-col tib" onclick="playAudio('tib_waw.mp3')">[w]</div>
-                    <div class="pron-col am" onclick="playAudio('am_waw.mp3')">[w]</div>
-                    <div class="pron-col mod" onclick="playAudio('mod_waw.mp3')">[v]</div>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_waw.mp3')">[w]</div>
+                        <div class="pron-col am" onclick="playAudio('am_waw.mp3')">[w]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_waw.mp3')">[v]</div>
+                    </div>
                 </td>
             </tr>
-            <!-- ZAYIN -->
+            <!-- ז -->
             <tr>
                 <td class="box-cyan">ז</td>
                 <td class="name-col">זַיִן</td>
-                <td class="audio-container-col">
-                    <div class="pron-col tib" onclick="playAudio('tib_zayin.mp3')">[z]</div>
-                    <div class="pron-col am" onclick="playAudio('am_zayin.mp3')">[z]</div>
-                    <div class="pron-col mod" onclick="playAudio('mod_zayin.mp3')">[z]</div>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_zayin.mp3')">[z]</div>
+                        <div class="pron-col am" onclick="playAudio('am_zayin.mp3')">[z]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_zayin.mp3')">[z]</div>
+                    </div>
                 </td>
             </tr>
-            <!-- CHET -->
+            <!-- ח -->
             <tr>
                 <td class="box-cyan">ח</td>
                 <td class="name-col">חֵית</td>
-                <td class="audio-container-col">
-                    <div class="pron-col tib" onclick="playAudio('tib_chet.mp3')">[ħ]</div>
-                    <div class="pron-col am" onclick="playAudio('am_chet.mp3')">[ħ]</div>
-                    <div class="pron-col mod" onclick="playAudio('mod_chet.mp3')">[χ]</div>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_chet.mp3')">[ħ]</div>
+                        <div class="pron-col am" onclick="playAudio('am_chet.mp3')">[ħ]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_chet.mp3')">[χ]</div>
+                    </div>
                 </td>
             </tr>
-            <!-- TET -->
+            <!-- ט -->
             <tr>
                 <td class="box-cyan">ט</td>
                 <td class="name-col">טִית</td>
-                <td class="audio-container-col">
-                    <div class="pron-col tib" onclick="playAudio('tib_tet.mp3')">[tˁ]</div>
-                    <div class="pron-col am" onclick="playAudio('am_tet.mp3')">[t]</div>
-                    <div class="pron-col mod" onclick="playAudio('mod_tet.mp3')">[t]</div>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_tet.mp3')">[tˁ]</div>
+                        <div class="pron-col am" onclick="playAudio('am_tet.mp3')">[t]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_tet.mp3')">[t]</div>
+                    </div>
                 </td>
             </tr>
-            <!-- YOD -->
+            <!-- י -->
             <tr>
                 <td class="box-cyan">י</td>
                 <td class="name-col">יוֹד</td>
-                <td class="audio-container-col">
-                    <div class="pron-col tib" onclick="playAudio('tib_yod.mp3')">[j]</div>
-                    <div class="pron-col am" onclick="playAudio('am_yod.mp3')">[j]</div>
-                    <div class="pron-col mod" onclick="playAudio('mod_yod.mp3')">[j]</div>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_yod.mp3')">[j]</div>
+                        <div class="pron-col am" onclick="playAudio('am_yod.mp3')">[j]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_yod.mp3')">[j]</div>
+                    </div>
                 </td>
             </tr>
-            <!-- KAF 1 (Hard) -->
+            <!-- כּ / ךּ -->
             <tr>
                 <td class="box-yellow">כּ / ךּ</td>
                 <td class="name-col">כַּף</td>
-                <td class="audio-container-col">
-                    <div class="pron-col tib" onclick="playAudio('tib_kaf_dagesh.mp3')">[k]</div>
-                    <div class="pron-col am" onclick="playAudio('am_kaf_dagesh.mp3')">[k]</div>
-                    <div class="pron-col mod" onclick="playAudio('mod_kaf_dagesh.mp3')">[k]</div>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_kaf_dagesh.mp3')">[k]</div>
+                        <div class="pron-col am" onclick="playAudio('am_kaf_dagesh.mp3')">[k]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_kaf_dagesh.mp3')">[k]</div>
+                    </div>
                 </td>
             </tr>
+            <!-- כ / ך -->
+            <tr>
+                <td class="box-yellow">כ / ך</td>
+                <td class="name-col">כַּף</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_kaf.mp3')">[x]</div>
+                        <div class="pron-col am" onclick="playAudio('am_kaf.mp3')">[x]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_kaf.mp3')">[χ]</div>
+                    </div>
+                </td>
+            </tr>
+            <!-- ל -->
+            <tr>
+                <td class="box-cyan">ל</td>
+                <td class="name-col">לָמֶד</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_lamed.mp3')">[l]</div>
+                        <div class="pron-col am" onclick="playAudio('am_lamed.mp3')">[l]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_lamed.mp3')">[l]</div>
+                    </div>
+                </td>
+            </tr>
+            <!-- מ / ם -->
+            <tr>
+                <td class="box-cyan">מ / ם</td>
+                <td class="name-col">מֵם</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_mem.mp3')">[m]</div>
+                        <div class="pron-col am" onclick="playAudio('am_mem.mp3')">[m]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_mem.mp3')">[m]</div>
+                    </div>
+                </td>
+            </tr>
+            <!-- נ / ן -->
+            <tr>
+                <td class="box-cyan">נ / ן</td>
+                <td class="name-col">נוּן</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_nun.mp3')">[n]</div>
+                        <div class="pron-col am" onclick="playAudio('am_nun.mp3')">[n]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_nun.mp3')">[n]</div>
+                    </div>
+                </td>
+            </tr>
+            <!-- ס -->
+            <tr>
+                <td class="box-cyan">ס</td>
+                <td class="name-col">סָมֶךְ</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_samekh.mp3')">[s]</div>
+                        <div class="pron-col am" onclick="playAudio('am_samekh.mp3')">[s]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_samekh.mp3')">[s]</div>
+                    </div>
+                </td>
+            </tr>
+            <!-- ע -->
+            <tr>
+                <td class="box-cyan">ע</td>
+                <td class="name-col">עַיִן</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_ayin.mp3')">[ʕ]</div>
+                        <div class="pron-col am" onclick="playAudio('am_ayin.mp3')">[ʕ]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_ayin.mp3')">[ʔ]</div>
+                    </div>
+                </td>
+            </tr>
+            <!-- פִּ -->
+            <tr>
+                <td class="box-yellow">פִּ</td>
+                <td class="name-col">פֶּה</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_pe_dagesh.mp3')">[p]</div>
+                        <div class="pron-col am" onclick="playAudio('am_pe_dagesh.mp3')">[p]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_pe_dagesh.mp3')">[p]</div>
+                    </div>
+                </td>
+            </tr>
+            <!-- פ / ף -->
+            <tr>
+                <td class="box-yellow">פ / ף</td>
+                <td class="name-col">פֶה</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_pe.mp3')">[f]</div>
+                        <div class="pron-col am" onclick="playAudio('am_pe.mp3')">[f]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_pe.mp3')">[f]</div>
+                    </div>
+                </td>
+            </tr>
+            <!-- צ / ץ -->
+            <tr>
+                <td class="box-cyan">צ / ץ</td>
+                <td class="name-col">צָדֵי</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_tsade.mp3')">[sˤ]</div>
+                        <div class="pron-col am" onclick="playAudio('am_tsade.mp3')">[ts]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_tsade.mp3')">[ts]</div>
+                    </div>
+                </td>
+            </tr>
+            <!-- ק -->
+            <tr>
+                <td class="box-cyan">ק</td>
+                <td class="name-col">קוֹף</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_qof.mp3')">[q]</div>
+                        <div class="pron-col am" onclick="playAudio('am_qof.mp3')">[q]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_qof.mp3')">[k]</div>
+                    </div>
+                </td>
+            </tr>
+            <!-- ר -->
+            <tr>
+                <td class="box-cyan">ר</td>
+                <td class="name-col">רֵישׁ</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_resh.mp3')">[R]*</div>
+                        <div class="pron-col am" onclick="playAudio('am_resh.mp3')">[ɾ]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_resh.mp3')">[ʁ]</div>
+                    </div>
+                </td>
+            </tr>
+            <!-- שׁ -->
+            <tr>
+                <td class="box-cyan">שׁ</td>
+                <td class="name-col">שִׁין</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_shin.mp3')">[ʃ]</div>
+                        <div class="pron-col am" onclick="playAudio('am_shin.mp3')">[ʃ]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_shin.mp3')">[ʃ]</div>
+                    </div>
+                </td>
+            </tr>
+            <!-- שׂ -->
+            <tr>
+                <td class="box-cyan">שׂ</td>
+                <td class="name-col">שִׂין</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_sin.mp3')">[s]</div>
+                        <div class="pron-col am" onclick="playAudio('am_sin.mp3')">[s]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_sin.mp3')">[s]</div>
+                    </div>
+                </td>
+            </tr>
+            <!-- תּ -->
+            <tr>
+                <td class="box-yellow">תּ</td>
+                <td class="name-col">תָּו</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_tav_dagesh.mp3')">[t]</div>
+                        <div class="pron-col am" onclick="playAudio('am_tav_dagesh.mp3')">[t]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_tav_dagesh.mp3')">[t]</div>
+                    </div>
+                </td>
+            </tr>
+            <!-- ת -->
+            <tr>
+                <td class="box-yellow">ת</td>
+                <td class="name-col">תָו</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_tav.mp3')">[θ]</div>
+                        <div class="pron-col am" onclick="playAudio('am_tav.mp3')">[t]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_tav.mp3')">[t]</div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="footnote">*/ [rˤ]</div>
+</div>
+<!-- ==================== SEITE 3: VOKALE & LESEZEICHEN (נְקוּד) ==================== -->
+<div class="page-container">
+    <h2>נְקוּד</h2>
+    <table>
+        <tbody>
+            <!-- חֹלֶם -->
+            <tr>
+                <td class="box-red">אָ</td>
+                <td class="name-col">חֹלֶם</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_cholem.mp3')">[o:]</div>
+                        <div class="pron-col am" onclick="playAudio('am_cholem.mp3')">[o:]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_cholem.mp3')">[o]</div>
+                    </div>
+                </td>
+            </tr>
+            <!-- חִירָק -->
+            <tr>
+                <td class="box-red">אִ</td>
+                <td class="name-col">חִירָק</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_chiriq.mp3')">[i] / [i:]</div>
+                        <div class="pron-col am" onclick="playAudio('am_chiriq.mp3')">[i] / [i:]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_chiriq.mp3')">[i]</div>
+                    </div>
+                </td>
+            </tr>
+            <!-- סְגוֹל -->
+            <tr>
+                <td class="box-red">אֶ</td>
+                <td class="name-col">סְגוֹל</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_segol.mp3')">[ɛ] / [ɛ:]</div>
+                        <div class="pron-col am" onclick="playAudio('am_segol.mp3')">[ɛ] / [ɛ:]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_segol.mp3')">[e̞]</div>
+                    </div>
+                </td>
+            </tr>
+            <!-- פַּתַח -->
+            <tr>
+                <td class="box-red">אַ</td>
+                <td class="name-col">פַּתַח</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_patach.mp3')">[a] / [a:]</div>
+                        <div class="pron-col am" onclick="playAudio('am_patach.mp3')">[a]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_patach.mp3')">[a]</div>
+                    </div>
+                </td>
+            </tr>
+            <!-- צֵרִי -->
+            <tr>
+                <td class="box-red">אֵ</td>
+                <td class="name-col">צֵרִי</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_tsere.mp3')">[e:]</div>
+                        <div class="pron-col am" onclick="playAudio('am_tsere.mp3')">[e:]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_tsere.mp3')">[e̞]</div>
+                    </div>
+                </td>
+            </tr>
+            <!-- קִבּוּץ -->
+            <tr>
+                <td class="box-red">אֻ</td>
+                <td class="name-col">קִבּוּץ</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_qibuts.mp3')">[u] / [u:]</div>
+                        <div class="pron-col am" onclick="playAudio('am_qibuts.mp3')">[u] / [u:]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_qibuts.mp3')">[u]</div>
+                    </div>
+                </td>
+            </tr>
+            <!-- קָמֶץ -->
+            <tr>
+                <td class="box-red">אָ</td>
+                <td class="name-col">קָמֶץ</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_qamats.mp3')">[ɔ] / [ɔ:]</div>
+                        <div class="pron-col am" onclick="playAudio('am_qamats.mp3')">[a:] / [ɔ]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_qamats.mp3')">[a] / [ɔ]</div>
+                    </div>
+                </td>
+            </tr>
+            <!-- שְׁוָא -->
+            <tr>
+                <td class="box-red">אְ</td>
+                <td class="name-col">שְׁוָא</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_sheva.mp3')">[ă]*/Ø</div>
+                        <div class="pron-col am" onclick="playAudio('am_sheva.mp3')">[ə] / Ø</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_sheva.mp3')">[ə] / Ø</div>
+                    </div>
+                </td>
+            </tr>
+            <!-- שׁוּרֶק -->
+            <tr>
+                <td class="box-red">אוּ</td>
+                <td class="name-col">שׁוּרֶק</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_shureq.mp3')">[u:]</div>
+                        <div class="pron-col am" onclick="playAudio('am_shureq.mp3')">[u:]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_shureq.mp3')">[u]</div>
+                    </div>
+                </td>
+            </tr>
+            <!-- חֲטֶף סְגוֹל -->
+            <tr>
+                <td class="box-red">אֱ</td>
+                <td class="name-col">חֲטֶף סְגוֹל</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_chatef_segol.mp3')">[ɛ̆]</div>
+                        <div class="pron-col am" onclick="playAudio('am_chatef_segol.mp3')">[ɛ̆]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_chatef_segol.mp3')">[e]</div>
+                    </div>
+                </td>
+            </tr>
+            <!-- חֲטֶף פַּתַח -->
+            <tr>
+                <td class="box-red">אֲ</td>
+                <td class="name-col">חֲטֶף פַּתַח</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_chatef_patach.mp3')">[ă]</div>
+                        <div class="pron-col am" onclick="playAudio('am_chatef_patach.mp3')">[ă]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_chatef_patach.mp3')">[a]</div>
+                    </div>
+                </td>
+            </tr>
+            <!-- חֲטֶף קָמֶץ -->
+            <tr>
+                <td class="box-red">אֳ</td>
+                <td class="name-col">חֲטֶף קָמֶץ</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_chatef_qamats.mp3')">[ɔ̆]</div>
+                        <div class="pron-col am" onclick="playAudio('am_chatef_qamats.mp3')">[ɔ̆]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_chatef_qamats.mp3')">[o]</div>
+                    </div>
+                </td>
+            </tr>
+            
+            <tr class="spacer"></tr>
+            
+            <!-- דָּגֵשׁ -->
+            <tr>
+                <td class="box-white">דּ</td>
+                <td class="name-col">דָּגֵשׁ</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_dagesh.mp3')">[:]</div>
+                        <div class="pron-col am" onclick="playAudio('am_dagesh.mp3')">[:]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_dagesh.mp3')">Ø</div>
+                    </div>
+                </td>
+            </tr>
+            <!-- מַפִּיק -->
+            <tr>
+                <td class="box-white">הּ</td>
+                <td class="name-col">מַפִּיק</td>
+                <td>
+                    <div class="audio-container-box">
+                        <div class="pron-col tib" onclick="playAudio('tib_mappiq.mp3')">[h]</div>
+                        <div class="pron-col am" onclick="playAudio('am_mappiq.mp3')">[h]</div>
+                        <div class="pron-col mod" onclick="playAudio('mod_mappiq.mp3')">Ø</div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="footnote">*/ [ɛ̆], [ĕ], [ĭ], [ŏ], [ɔ̆], [ŭ]</div>
+</div>
+<!-- ==================== SEITE 4: DIE WORTLISTE ==================== -->
+<div class="page-container">
+    <div style="margin-bottom: 25px;">
+        <div class="legend-item"><div class="legend-box tib"></div> קוֹל טְבֶרְיָה</div>
+        <div class="legend-item"><div class="legend-box am"></div> קוֹל הַסּפֶר הַזֶּה</div>
+        <div class="legend-item"><div class="legend-box mod"></div> קוֹל יָמֵינוּ</div>
+    </div>
+
+    <div class="word-grid">
+        <span class="word-item" onclick="playWord('adam')">אָדָם</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('yiqra')">יִקְרָא</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('lammah')">לָמָּה</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('berit')">בְּרִית</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('cheder')">חֶדֶר</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('meod')">מְאֹד</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('laylah')">לַיְלָה</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('od')">עוֹד</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('panim')">פָּנִים</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('tsachaq')">צָחַק</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('gadol')">גָּדוֹל</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('haish')">הָאִישׁ</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('veattah')">וְאַתָּה</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('zot')">זֹאת</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('lintot')">לִנְטוֹת</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('yeled')">יֶלֶד</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('kol')">כֹּל</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('sal')">סַל</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('asinu')">עָשִׂינוּ</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('divrehem')">דִּבְרֵיהֶם</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('degel')">דֶּגֶל</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('ach')">אַךְ</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('afu')">אָפוּ</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('haarets')">הָאָרֶץ</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('kaf')">כַּף</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('ken')">כֵּן</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('schachachti')">שָׁכַחְתִּי</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('oniyah')">אֱנִיָּה</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('elohim')">אֱלֹהִים</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('ani')">אֲנִי</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('kutonet')">כֻּתֹּנֶת</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('yehudah')">יְהוּדָה</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('aryeh')">אַרְיֵה</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('kisse')">כִּסֵּא</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('rosh')">רֹאשׁ</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('milchamah')">מִלְחָמָה</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('qodesh')">קֹדֶשׁ</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('al')">עַל</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('min')">מִן</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('perets')">פֶּרֶץ</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('raq')">רַק</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('chag')">חַג</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('lulei')">לוּלֵי</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('tohor')">טָהֳר</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('mazleg')">מַזְלֵג</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('tame')">טָמֵא</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('ani_adj')">עֲנִי</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('eeseh')">אֶעֱשֶׂה</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('keren')">קֶרֶן</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('qol')">קוֹל</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('yaalu')">יַעֲלוּ</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('maasu')">מָאֲסוּ</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('redu')">רְדוּ</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('vayyeshev')">וַיֵּשֶׁב</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('yaar')">יַעַר</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('ketavten')">כְּתַבְתֶּן</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('yom')">יוֹם</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('magen')">מָגֵן</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('tsoaqei')">צֹעֲקֵי</span> <span class="word-sep">|</span>
+        <span class="word-item" onclick="playWord('et')">אֵת</span>
+    </div>
+</div>
+
+<script>
+    // Spielt die Einzellaute aus den Tabellen ab
+    function playAudio(fileName) {
+        let audio = new Audio(fileName);
+        audio.play().catch(function(error) {
+            console.log("Audio fehlt auf GitHub: " + fileName);
+        });
+    }
+
+    // Spielt die ganzen Wörter ab
+    // Erwartet z.B. die Datei 'word_adam.mp3' in deinem Ordner
+    function playWord(wordName) {
+        let audio = new Audio('word_' + wordName + '.mp3');
+        audio.play().catch(function(error) {
+            console.log("Wort-Audio fehlt auf GitHub: word_" + wordName + ".mp3");
+        });
+    }
+</script>
 
 </body>
 </html>
+
+
