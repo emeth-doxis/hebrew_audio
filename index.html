@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblisches Hebräisch - Aussprachetrainer</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f5f5f7; padding: 20px; color: #333; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        h1 { text-align: center; color: #1d1d1f; margin-bottom: 10px; }
+        .subtitle { text-align: center; color: #86868b; margin-bottom: 30px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; border-radius: 8px; overflow: hidden; }
+        th, td { border: 1px solid #e5e5e5; padding: 15px; text-align: center; }
+        th { background-color: #f5f5f7; font-weight: 600; }
+        
+        /* Deine exakten Wunschfarben für das Design */
+        .tiberian { background-color: #e3f2fd !important; } /* Blau */
+        .authors-mix { background-color: #fff8e1 !important; font-weight: bold; } /* Elfenbein */
+        .modern { background-color: #e8f5e9 !important; } /* Grün */
+        
+        /* So sehen die klickbaren IPA-Knöpfe aus */
+        .audio-btn { cursor: pointer; color: #0066cc; text-decoration: none; display: inline-block; padding: 6px 12px; border-radius: 6px; background: rgba(0,102,204,0.05); border: 1px solid rgba(0,102,204,0.1); }
+        .audio-btn:hover { background-color: rgba(0,102,204,0.15); }
+        .hebrew { font-size: 28px; font-family: "Times New Roman", serif; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Aussprache-Einführung</h1>
+    <p class="subtitle">Klicke einfach auf einen IPA-Laut, um die Aussprache direkt im Hintergrund zu hören.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Hebräisch</th>
+                <th class="tiberian">1. Tiberianisch (Blau)</th>
+                <th class="authors-mix">2. Author's Mix (Elfenbein)</th>
+                <th class="modern">3. Modern (Grün)</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <!-- Zeile 1: CHET -->
+            <tr>
+                <td class="hebrew">ח</td>
+                <td class="tiberian"><span class="audio-btn" onclick="playAudio('tib_chet.mp3')">[ħ]</span></td>
+                <td class="authors-mix"><span class="audio-btn" onclick="playAudio('am_chet.mp3')">[ħ]</span></td>
+                <td class="modern"><span class="audio-btn" onclick="playAudio('mod_chet.mp3')">[χ]</span></td>
+            </tr>
+            
+            <!-- Zeile 2: WAW -->
+            <tr>
+                <td class="hebrew">ו</td>
+                <td class="tiberian"><span class="audio-btn" onclick="playAudio('tib_waw.mp3')">[w]</span></td>
+                <td class="authors-mix"><span class="audio-btn" onclick="playAudio('am_waw.mp3')">[w]</span></td>
+                <td class="modern"><span class="audio-btn" onclick="playAudio('mod_waw.mp3')">[v]</span></td>
+            </tr>
+
+            <!-- Zeile 3: AYIN -->
+            <tr>
+                <td class="hebrew">ע</td>
+                <td class="tiberian"><span class="audio-btn" onclick="playAudio('tib_ayin.mp3')">[ʕ]</span></td>
+                <td class="authors-mix"><span class="audio-btn" onclick="playAudio('am_ayin.mp3')">[ʕ]</span></td>
+                <td class="modern"><span class="audio-btn" onclick="playAudio('mod_ayin.mp3')">stumm</span></td>
+            </tr>
+
+            <!-- Zeile 4: QOF -->
+            <tr>
+                <td class="hebrew">ק</td>
+                <td class="tiberian"><span class="audio-btn" onclick="playAudio('tib_qof.mp3')">[q]</span></td>
+                <td class="authors-mix"><span class="audio-btn" onclick="playAudio('am_qof.mp3')">[q]</span></td>
+                <td class="modern"><span class="audio-btn" onclick="playAudio('mod_qof.mp3')">[k]</span></td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div>
+
+<script>
+    // Dieser kleine unsichtbare Helfer spielt den Ton im Hintergrund ab, ohne die Seite neu zu laden
+    function playAudio(fileName) {
+        let audio = new Audio(fileName);
+        audio.play().catch(function(error) {
+            console.log("Audio-Fehler: Stelle sicher, dass die Datei hochgeladen wurde und exakt so heißt.");
+        });
+    }
+</script>
+
+</body>
+</html>
