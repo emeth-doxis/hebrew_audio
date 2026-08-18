@@ -177,15 +177,16 @@
             direction: rtl;
         }
 
-        /* Das Design für deine perfekten Kreise */
+        /* Das Design für deine perfekten Kreise - jetzt mit Höhenkorrektur */
         .legend-box {
-            width: 22px !important; /* Etwas größer, passend zur neuen Schriftgröße */
+            width: 22px !important;
             height: 22px !important;
             min-width: 22px !important;
             min-height: 22px !important;
             border: 1px solid #000000;
             border-radius: 50% !important;
             margin-left: 14px; /* Abstand zum hebräischen Text */
+            margin-top: -6px !important; /* Zwingt den Kreis ein Stück nach oben auf perfekte Texthöhe! */
             display: inline-block;
             flex-shrink: 0;
         }
