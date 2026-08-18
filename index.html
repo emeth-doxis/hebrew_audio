@@ -114,6 +114,7 @@
         .pron-col:hover { 
             filter: brightness(0.95); 
         }
+
         .spacer { height: 8px; }
         .footnote {
             font-size: 20px;
@@ -121,9 +122,55 @@
             text-align: left;
             width: 100%;
         }
+
+        /* ==================== AUTOMATISCHE HANDY-OPTIMIERUNG ==================== */
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 15px 5px; /* Weniger Rand am Handybildschirm */
+            }
+            .page-container {
+                max-width: 100%; /* Nutzt die volle Handybreite */
+            }
+            th {
+                font-size: 28px; /* Überschriften am Handy leicht verkleinern */
+            }
+            /* Die farbigen Buchstaben-Boxen auf Handys */
+            .box-cyan, .box-yellow, .box-red, .box-white {
+                width: 45px;
+                height: 42px;
+                font-size: 26px; /* Symbole leicht anpassen */
+            }
+            /* Die Spalte mit den hebräischen Namen */
+            .name-col {
+                font-size: 22px; /* Schützt Wörter wie חֲטֶף סְגוֹל vor dem Umbruch */
+                white-space: nowrap; /* Garantiert eine Zeile auf dem Handy */
+                padding: 4px 6px;
+            }
+            /* Die Audio-Boxen am Handy kompakt, aber perfekt tippbar halten */
+            .audio-container-box {
+                width: 165px;
+                height: 42px;
+            }
+            .vowel-table .audio-container-box {
+                width: 180px; /* Perfekte Breite für die Vokaltabelle am Handy */
+            }
+            .pron-col {
+                font-size: 16px; /* IPA-Schriftgröße für Touch-Knöpfe optimieren */
+            }
+            /* Die Wortliste auf Seite 4 für Daumen-Tipps optimieren */
+            .word-grid {
+                font-size: 24px;
+                row-gap: 12px;
+                column-gap: 8px;
+            }
+            .legend-item {
+                font-size: 18px;
+            }
+        }
     </style>
 </head>
 <body>
+
 
 <!-- ==================== SEITE 1: KONSONANTEN (א bis כ) ==================== -->
 <div class="page-container">
