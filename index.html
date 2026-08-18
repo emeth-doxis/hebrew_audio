@@ -1,92 +1,240 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="he">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblisches Hebräisch - Aussprachetrainer</title>
+    <title>Aussprache-Einführung - Konsonanten</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f5f5f7; padding: 20px; color: #333; }
-        .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        h1 { text-align: center; color: #1d1d1f; margin-bottom: 10px; }
-        .subtitle { text-align: center; color: #86868b; margin-bottom: 30px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; border-radius: 8px; overflow: hidden; }
-        th, td { border: 1px solid #e5e5e5; padding: 15px; text-align: center; }
-        th { background-color: #f5f5f7; font-weight: 600; }
+        body { 
+            font-family: "SBL Hebrew", "Times New Roman", serif; 
+            background-color: #ffffff; 
+            margin: 0; 
+            padding: 40px 20px; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+        }
+        .page-container { 
+            max-width: 600px; 
+            width: 100%; 
+        }
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 10px; 
+        }
+        /* Haupt-Überschriften exakt wie im PDF */
+        th { 
+            font-size: 36px; 
+            font-weight: normal; 
+            padding-bottom: 15px; 
+            border-bottom: 3px solid #000000; 
+            text-align: center;
+        }
+        td { 
+            padding: 10px 5px; 
+            text-align: center; 
+            vertical-align: middle; 
+            font-size: 24px;
+        }
+        /* Die farbigen Boxen für die Buchstaben */
+        .box-cyan { 
+            background-color: #00ffff !important; 
+            border: 1px solid #000000; 
+            width: 60px; 
+            font-weight: bold;
+        }
+        .box-yellow { 
+            background-color: #ffff00 !important; 
+            border: 1px solid #000000; 
+            width: 60px; 
+            font-weight: bold;
+        }
+        /* Die Spalte mit den hebräischen Namen */
+        .name-col { 
+            width: 140px; 
+        }
+        /* Die 3 Aussprache-Spalten mit deinen exakten PDF-Farben */
+        .audio-container-col {
+            display: flex;
+            border: 1px solid #000000;
+        }
+        .pron-col { 
+            width: 70px; 
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer; 
+            user-select: none;
+            font-size: 22px;
+            border-right: 1px solid #000000;
+        }
+        .pron-col:last-child {
+            border-right: none;
+        }
+        /* Hintergrundfarben der Aussprachen */
+        .tib { background-color: #b4c6e7; } /* Tiberianisch-Blau */
+        .am { background-color: #fce4d6; }  /* Author's Mix-Hautton */
+        .mod { background-color: #e2efda; } /* Modern-Grün */
         
-        /* Deine exakten Wunschfarben für das Design */
-        .tiberian { background-color: #e3f2fd !important; } /* Blau */
-        .authors-mix { background-color: #fff8e1 !important; font-weight: bold; } /* Elfenbein */
-        .modern { background-color: #e8f5e9 !important; } /* Grün */
-        
-        /* So sehen die klickbaren IPA-Knöpfe aus */
-        .audio-btn { cursor: pointer; color: #0066cc; text-decoration: none; display: inline-block; padding: 6px 12px; border-radius: 6px; background: rgba(0,102,204,0.05); border: 1px solid rgba(0,102,204,0.1); }
-        .audio-btn:hover { background-color: rgba(0,102,204,0.15); }
-        .hebrew { font-size: 28px; font-family: "Times New Roman", serif; font-weight: bold; }
+        .pron-col:hover { 
+            filter: brightness(0.92); 
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>Aussprache-Einführung</h1>
-    <p class="subtitle">Klicke einfach auf einen IPA-Laut, um die Aussprache direkt im Hintergrund zu hören.</p>
-
+<div class="page-container">
     <table>
         <thead>
             <tr>
-                <th>Hebräisch</th>
-                <th class="tiberian">1. Tiberianisch (Blau)</th>
-                <th class="authors-mix">2. Author's Mix (Elfenbein)</th>
-                <th class="modern">3. Modern (Grün)</th>
+                <th style="width: 70px;">תָּוִים</th>
+                <th class="name-col">שֵׁמוֹת</th>
+                <th style="width: 212px;">קוֹל</th>
             </tr>
         </thead>
         <tbody>
-            
-            <!-- Zeile 1: CHET -->
+            <!-- ALEPH -->
             <tr>
-                <td class="hebrew">ח</td>
-                <td class="tiberian"><span class="audio-btn" onclick="playAudio('tib_chet.mp3')">[ħ]</span></td>
-                <td class="authors-mix"><span class="audio-btn" onclick="playAudio('am_chet.mp3')">[ħ]</span></td>
-                <td class="modern"><span class="audio-btn" onclick="playAudio('mod_chet.mp3')">[χ]</span></td>
+                <td class="box-cyan">א</td>
+                <td class="name-col">אָלֶף</td>
+                <td class="audio-container-col">
+                    <div class="pron-col tib" onclick="playAudio('tib_alef.mp3')">[ʔ]</div>
+                    <div class="pron-col am" onclick="playAudio('am_alef.mp3')">[ʔ]</div>
+                    <div class="pron-col mod" onclick="playAudio('mod_alef.mp3')">[ʔ]</div>
+                </td>
             </tr>
-            
-            <!-- Zeile 2: WAW -->
+            <!-- BET 1 (Hard) -->
             <tr>
-                <td class="hebrew">ו</td>
-                <td class="tiberian"><span class="audio-btn" onclick="playAudio('tib_waw.mp3')">[w]</span></td>
-                <td class="authors-mix"><span class="audio-btn" onclick="playAudio('am_waw.mp3')">[w]</span></td>
-                <td class="modern"><span class="audio-btn" onclick="playAudio('mod_waw.mp3')">[v]</span></td>
+                <td class="box-yellow">בּ</td>
+                <td class="name-col">בֵּית</td>
+                <td class="audio-container-col">
+                    <div class="pron-col tib" onclick="playAudio('tib_bet_dagesh.mp3')">[b]</div>
+                    <div class="pron-col am" onclick="playAudio('am_bet_dagesh.mp3')">[b]</div>
+                    <div class="pron-col mod" onclick="playAudio('mod_bet_dagesh.mp3')">[b]</div>
+                </td>
             </tr>
-
-            <!-- Zeile 3: AYIN -->
+            <!-- BET 2 (Soft) -->
             <tr>
-                <td class="hebrew">ע</td>
-                <td class="tiberian"><span class="audio-btn" onclick="playAudio('tib_ayin.mp3')">[ʕ]</span></td>
-                <td class="authors-mix"><span class="audio-btn" onclick="playAudio('am_ayin.mp3')">[ʕ]</span></td>
-                <td class="modern"><span class="audio-btn" onclick="playAudio('mod_ayin.mp3')">stumm</span></td>
+                <td class="box-yellow">ב</td>
+                <td class="name-col">בֵית</td>
+                <td class="audio-container-col">
+                    <div class="pron-col tib" onclick="playAudio('tib_bet.mp3')">[v]</div>
+                    <div class="pron-col am" onclick="playAudio('am_bet.mp3')">[v]</div>
+                    <div class="pron-col mod" onclick="playAudio('mod_bet.mp3')">[v]</div>
+                </td>
             </tr>
-
-            <!-- Zeile 4: QOF -->
+            <!-- GIMEL 1 (Hard) -->
             <tr>
-                <td class="hebrew">ק</td>
-                <td class="tiberian"><span class="audio-btn" onclick="playAudio('tib_qof.mp3')">[q]</span></td>
-                <td class="authors-mix"><span class="audio-btn" onclick="playAudio('am_qof.mp3')">[q]</span></td>
-                <td class="modern"><span class="audio-btn" onclick="playAudio('mod_qof.mp3')">[k]</span></td>
+                <td class="box-yellow">גּ</td>
+                <td class="name-col">גְּמֶל</td>
+                <td class="audio-container-col">
+                    <div class="pron-col tib" onclick="playAudio('tib_gimel_dagesh.mp3')">[g]</div>
+                    <div class="pron-col am" onclick="playAudio('am_gimel_dagesh.mp3')">[g]</div>
+                    <div class="pron-col mod" onclick="playAudio('mod_gimel_dagesh.mp3')">[g]</div>
+                </td>
             </tr>
-            
-        </tbody>
-    </table>
-</div>
-
-<script>
-    // Dieser kleine unsichtbare Helfer spielt den Ton im Hintergrund ab, ohne die Seite neu zu laden
-    function playAudio(fileName) {
-        let audio = new Audio(fileName);
-        audio.play().catch(function(error) {
-            console.log("Audio-Fehler: Stelle sicher, dass die Datei hochgeladen wurde und exakt so heißt.");
-        });
-    }
-</script>
-     
+            <!-- GIMEL 2 (Soft) -->
+            <tr>
+                <td class="box-yellow">ג</td>
+                <td class="name-col">גְמֶל</td>
+                <td class="audio-container-col">
+                    <div class="pron-col tib" onclick="playAudio('tib_gimel.mp3')">[ɣ]</div>
+                    <div class="pron-col am" onclick="playAudio('am_gimel.mp3')">[g]</div>
+                    <div class="pron-col mod" onclick="playAudio('mod_gimel.mp3')">[g]</div>
+                </td>
+            </tr>
+            <!-- DALET 1 (Hard) -->
+            <tr>
+                <td class="box-yellow">דּ</td>
+                <td class="name-col">דָּלֶת</td>
+                <td class="audio-container-col">
+                    <div class="pron-col tib" onclick="playAudio('tib_dalet_dagesh.mp3')">[d]</div>
+                    <div class="pron-col am" onclick="playAudio('am_dalet_dagesh.mp3')">[d]</div>
+                    <div class="pron-col mod" onclick="playAudio('mod_dalet_dagesh.mp3')">[d]</div>
+                </td>
+            </tr>
+            <!-- DALET 2 (Soft) -->
+            <tr>
+                <td class="box-yellow">ד</td>
+                <td class="name-col">דָלֶת</td>
+                <td class="audio-container-col">
+                    <div class="pron-col tib" onclick="playAudio('tib_dalet.mp3')">[ð]</div>
+                    <div class="pron-col am" onclick="playAudio('am_dalet.mp3')">[d]</div>
+                    <div class="pron-col mod" onclick="playAudio('mod_dalet.mp3')">[d]</div>
+                </td>
+            </tr>
+            <!-- HE -->
+            <tr>
+                <td class="box-cyan">ה</td>
+                <td class="name-col">הֵא</td>
+                <td class="audio-container-col">
+                    <div class="pron-col tib" onclick="playAudio('tib_he.mp3')">[h]</div>
+                    <div class="pron-col am" onclick="playAudio('am_he.mp3')">[h]</div>
+                    <div class="pron-col mod" onclick="playAudio('mod_he.mp3')">[h]</div>
+                </td>
+            </tr>
+            <!-- WAW -->
+            <tr>
+                <td class="box-cyan">ו</td>
+                <td class="name-col">וָו</td>
+                <td class="audio-container-col">
+                    <div class="pron-col tib" onclick="playAudio('tib_waw.mp3')">[w]</div>
+                    <div class="pron-col am" onclick="playAudio('am_waw.mp3')">[w]</div>
+                    <div class="pron-col mod" onclick="playAudio('mod_waw.mp3')">[v]</div>
+                </td>
+            </tr>
+            <!-- ZAYIN -->
+            <tr>
+                <td class="box-cyan">ז</td>
+                <td class="name-col">זַיִן</td>
+                <td class="audio-container-col">
+                    <div class="pron-col tib" onclick="playAudio('tib_zayin.mp3')">[z]</div>
+                    <div class="pron-col am" onclick="playAudio('am_zayin.mp3')">[z]</div>
+                    <div class="pron-col mod" onclick="playAudio('mod_zayin.mp3')">[z]</div>
+                </td>
+            </tr>
+            <!-- CHET -->
+            <tr>
+                <td class="box-cyan">ח</td>
+                <td class="name-col">חֵית</td>
+                <td class="audio-container-col">
+                    <div class="pron-col tib" onclick="playAudio('tib_chet.mp3')">[ħ]</div>
+                    <div class="pron-col am" onclick="playAudio('am_chet.mp3')">[ħ]</div>
+                    <div class="pron-col mod" onclick="playAudio('mod_chet.mp3')">[χ]</div>
+                </td>
+            </tr>
+            <!-- TET -->
+            <tr>
+                <td class="box-cyan">ט</td>
+                <td class="name-col">טִית</td>
+                <td class="audio-container-col">
+                    <div class="pron-col tib" onclick="playAudio('tib_tet.mp3')">[tˁ]</div>
+                    <div class="pron-col am" onclick="playAudio('am_tet.mp3')">[t]</div>
+                    <div class="pron-col mod" onclick="playAudio('mod_tet.mp3')">[t]</div>
+                </td>
+            </tr>
+            <!-- YOD -->
+            <tr>
+                <td class="box-cyan">י</td>
+                <td class="name-col">יוֹד</td>
+                <td class="audio-container-col">
+                    <div class="pron-col tib" onclick="playAudio('tib_yod.mp3')">[j]</div>
+                    <div class="pron-col am" onclick="playAudio('am_yod.mp3')">[j]</div>
+                    <div class="pron-col mod" onclick="playAudio('mod_yod.mp3')">[j]</div>
+                </td>
+            </tr>
+            <!-- KAF 1 (Hard) -->
+            <tr>
+                <td class="box-yellow">כּ / ךּ</td>
+                <td class="name-col">כַּף</td>
+                <td class="audio-container-col">
+                    <div class="pron-col tib" onclick="playAudio('tib_kaf_dagesh.mp3')">[k]</div>
+                    <div class="pron-col am" onclick="playAudio('am_kaf_dagesh.mp3')">[k]</div>
+                    <div class="pron-col mod" onclick="playAudio('mod_kaf_dagesh.mp3')">[k]</div>
+                </td>
+            </tr>
 
 </body>
 </html>
