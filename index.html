@@ -84,6 +84,14 @@
             height: 52px;
             margin: 0 auto;
         }
+                /* Spezielle, breitere Box NUR für die Vokaltabelle (Seite 3) */
+        .vowel-table .audio-container-box {
+            width: 270px; /* Hier wird die Box breiter gemacht! */
+        }
+        .vowel-table .pron-col {
+            width: 90px; /* Jede der 3 Spalten wird von 70px auf 90px vergrößert */
+        }
+
         .pron-col { 
             width: 70px; 
             height: 100%;
@@ -484,7 +492,7 @@
 <!-- ==================== SEITE 3: VOKALE & LESEZEICHEN (נְקוּד) ==================== -->
 <div class="page-container">
     <h2>נִקּוּד</h2>
-    <table>
+    <table class="vowel-table">
         <tbody>
             <!-- חֹלֶם -->
             <tr>
