@@ -168,16 +168,16 @@
             }
         }
 
-        /* Zwingt Kreis und Text auf exakt dieselbe horizontale Linie und macht die Schrift größer */
+        /* Die perfekte, mathematische Ausrichtung an der Schriftlinie */
         .legend-item {
             display: flex !important;
-            align-items: center !important; /* Richtet Kreis und Text perfekt mittig aneinander aus */
-            font-size: 32px !important; /* Deutlich größere Schrift für die Legende */
+            align-items: baseline !important; /* Richtet Kreis und Text an der echten Schreiblinie aus */
+            font-size: 32px !important; 
             margin-bottom: 12px;
             direction: rtl;
         }
 
-        /* Das Design für deine perfekten Kreise - jetzt mit Höhenkorrektur */
+        /* Das Design für deine Kreise - perfekt austariert */
         .legend-box {
             width: 22px !important;
             height: 22px !important;
@@ -186,10 +186,13 @@
             border: 1px solid #000000;
             border-radius: 50% !important;
             margin-left: 14px; /* Abstand zum hebräischen Text */
-            margin-top: -6px !important; /* Zwingt den Kreis ein Stück nach oben auf perfekte Texthöhe! */
+            
+            /* Diese beiden Zeilen sorgen für die exakte visuelle Balance zur Baseline */
+            transform: translateY(3px); 
             display: inline-block;
             flex-shrink: 0;
         }
+
 
     </style>
 </head>
